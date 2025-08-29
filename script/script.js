@@ -138,3 +138,28 @@ window.addEventListener('resize', () => {
     card.style.transform = '';
   });
 });
+
+const track = document.querySelector('.carousel-track');
+const cards = Array.from(track.children);
+const cardWidth = cards[0].getBoundingClientRect().width + 25; // card width + margin-right
+
+let currentIndex = 0;
+
+function moveToIndex(index) {
+  // indexni limitga moslash
+  if (index >= cards.length) currentIndex = 0;
+  else if (index < 0) currentIndex = cards.length - 1;
+  else currentIndex = index;
+
+  const amountToMove = -cardWidth * currentIndex;
+  track.style.transform = `translateX(${amountToMove}px)`;
+}
+
+// 3 sekundlik avtomatik aylantirish
+setInterval(() => {
+  moveToIndex(currentIndex + 1);
+}, 3000);
+
+// Dastlab chapdan boshlash uchun:
+moveToIndex(0);
+    
