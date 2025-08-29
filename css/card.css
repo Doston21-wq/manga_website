@@ -1,68 +1,101 @@
- body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 50px;
-      background: #111;   /* fon rangi */
-      color: white;
-      z-index: 1000;
-    }
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  background: #111;
+  color: white;
+  z-index: 1000;
+  font-size: 14px;
+}
 
-    /* Logo */
-    .navbar .logo {
-      width: 70px;
-    }
+/* Logo */
+.navbar .logo {
+  width: 90px;
+}
 
-    /* Menu linklari */
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
+/* Menu linklari */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
 
-    .navbar ul li a {
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      transition: 0.3s;
-    }
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
 
-    .navbar ul li a:hover {
-      color: #ff00ff;   /* hover effekti */
-    }
+.navbar ul li a:hover {
+  color: #ff00ff;   /* hover effekti */
+}
 
-    /* O‘ng tomondagi ikonlar */
-    .icons {
-      display: flex;
-      gap: 20px;
-    font-size: 20px;
-   text-decoration: none;
-     margin-right: 100px;
-    }
-.icons a{
+/* O‘ng tomondagi ikonlar */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  margin-right: 50px;
+  position: relative;
+}
+
+.icons a {
   text-decoration: none;
   color: white;
 }
-    .icons i:hover {
-      color: #ff00ff;
-    }
 
-    /* Kontent pastga tushishi uchun */
-    .content {
-      padding: 120px 50px; /* fixed navbarni hisoblash uchun */
-      color: white;
-      background: linear-gradient(180deg, #000, #222);
-      height: 200vh;
-    }
+.icons i:hover {
+  color: #ff00ff;
+}
+
+/* Qidiruv inputi */
+.search-box {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+.search-box input {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #222;
+  color: white;
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+/* Ochilganda */
+.search-box.active {
+  width: 180px;
+  opacity: 1;
+}
+
+/* Kontent pastga tushishi uchun */
+.content {
+  padding: 120px 50px;
+  color: white;
+  background: linear-gradient(180deg, #000, #222);
+  height: 200vh;
+}

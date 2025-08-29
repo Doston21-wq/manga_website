@@ -3,10 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Normal Navbar</title>
-  <link rel="stylesheet" href="./css/card.css">
-
+  <title>Navbar with Search</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px;
+      background: #111;
+      color: white;
+      z-index: 1000;
+      font-size: 14px;
+    }
+
+    /* Logo */
+    .navbar .logo {
+      width: 90px;
+    }
+
+    /* Menu linklari */
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #ff00ff;
+    }
+
+    /* O‘ng tomondagi ikonlar */
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 20px;
+      margin-right: 50px;
+      position: relative;
+    }
+
+    .icons a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .icons i:hover {
+      color: #ff00ff;
+    }
+
+    /* Qidiruv inputi */
+    .search-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .search-box input {
+      width: 0;
+      opacity: 0;
+      padding: 6px 12px;
+      margin-left: 8px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: #222;
+      color: white;
+      box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+      transition: width 0.4s ease, opacity 0.3s ease;
+    }
+
+    /* Aktiv bo‘lganda input yonidan ochiladi */
+    .search-box.active input {
+      width: 160px;
+      opacity: 1;
+    }
+
+    /* Kontent pastga tushishi uchun */
+    .content {
+      padding: 120px 50px;
+      color: white;
+      background: linear-gradient(180deg, #000, #222);
+      height: 200vh;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,15 +122,35 @@
     </ul>
 
     <div class="icons">
-      <i class="ri-search-line"></i>
-      <a href="./login.html">
-      <i class="ri-user-line"></i>
-
+      <div class="search-box" id="searchBox">
+        <i class="ri-search-line" id="searchIcon"></i>
+        <input type="text" placeholder="Qidirish...">
+      </div>
+      <a href="./kirish.html">
+        <i class="ri-user-line"></i>
       </a>
     </div>
   </nav>
 
- 
+  <div class="content">
+    <h1>Asosiy Kontent</h1>
+    <p>Pastga skroll qilib ko‘ring...</p>
+  </div>
+
+  <script>
+    const searchIcon = document.getElementById("searchIcon");
+    const searchBox = document.getElementById("searchBox");
+    const searchInput = searchBox.querySelector("input");
+
+    searchIcon.addEventListener("click", () => {
+      searchBox.classList.toggle("active");
+      if (searchBox.classList.contains("active")) {
+        searchInput.focus();
+      } else {
+        searchInput.value = "";
+      }
+    });
+  </script>
 
 </body>
 </html>

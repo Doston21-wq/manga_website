@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manga Login</title>
+  <title>Manga Register</title>
   <style>
     * {
       margin: 0;
@@ -32,9 +32,9 @@
       background: rgba(0,0,0,0.75);
     }
 
-    .login-box {
+    .register-box {
       position: relative;
-      width: 350px;
+      width: 380px;
       padding: 40px;
       background: rgba(20, 20, 20, 0.9);
       border-radius: 12px;
@@ -44,24 +44,24 @@
       z-index: 1;
     }
 
-    .login-box h2 {
+    .register-box h2 {
       margin-bottom: 25px;
       font-size: 26px;
       color: #ff00ff;
       letter-spacing: 1px;
     }
 
-    .login-box .input-group {
+    .register-box .input-group {
       margin-bottom: 20px;
       text-align: left;
     }
 
-    .login-box label {
+    .register-box label {
       font-size: 14px;
       color: #aaa;
     }
 
-    .login-box input {
+    .register-box input {
       width: 100%;
       padding: 12px;
       margin-top: 8px;
@@ -73,12 +73,12 @@
       font-size: 15px;
     }
 
-    .login-box input:focus {
+    .register-box input:focus {
       border: 1px solid #ff00ff;
       box-shadow: 0 0 8px #ff00ff;
     }
 
-    .login-box button {
+    .register-box button {
       width: 100%;
       padding: 12px;
       background: linear-gradient(90deg, #ff00ff, #7b2cbf);
@@ -90,43 +90,51 @@
       transition: 0.3s;
     }
 
-    .login-box button:hover {
+    .register-box button:hover {
       background: linear-gradient(90deg, #7b2cbf, #ff00ff);
       box-shadow: 0 0 10px #ff00ff;
     }
 
-    .login-box .extra {
+    .register-box .extra {
       margin-top: 15px;
       font-size: 14px;
       color: #aaa;
     }
 
-    .login-box .extra a {
+    .register-box .extra a {
       color: #ff00ff;
       text-decoration: none;
     }
 
-    .login-box .extra a:hover {
+    .register-box .extra a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="login-box">
-    <h2>Manga Login</h2>
+  <div class="register-box">
+    <h2>Ro‘yxatdan o‘tish</h2>
     <form>
       <div class="input-group">
-        <label for="email">Email yoki Username</label>
-        <input type="text" id="email" placeholder="example@mail.com">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Foydalanuvchi nomi">
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="example@mail.com">
       </div>
       <div class="input-group">
         <label for="password">Parol</label>
         <input type="password" id="password" placeholder="*******">
       </div>
-      <button type="submit">Kirish</button>
+      <div class="input-group">
+        <label for="confirm-password">Parolni tasdiqlang</label>
+        <input type="password" id="confirm-password" placeholder="*******">
+      </div>
+      <button type="submit">Ro‘yxatdan o‘tish</button>
       <div class="extra">
-        <p>Hisobingiz yo‘qmi? <a href="/register.html">Ro‘yxatdan o‘ting</a></p>
+        <p>Hisobingiz bormi? <a href="/login.html">Kirish</a></p>
         <br>
         <p><a href="/">Asosiy sahifa</a></p>
       </div>
